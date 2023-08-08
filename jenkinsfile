@@ -20,7 +20,7 @@ pipeline{
                     // Docker hub에 로그인 위해 사용
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub'){
                        // Dockerfile 로 이미지 생성성
-                       docker.build('mmingu/jenkins-test','./docker')
+                       docker.build('mmingu/jenkins-test','--no-cache ./docker')
                        // plugin ->docker pipeline 설치해야 사용가능
                     }    
                 } 
